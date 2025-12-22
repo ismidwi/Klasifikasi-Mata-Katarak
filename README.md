@@ -92,23 +92,23 @@ Tahapan preprocessing dilakukan pada file `preprocessing.ipynb`, meliputi:
    * **Cataract**:     1.252
    * **Total**:        4.350
 
-4. **Resize gambar ke 128×128**
+3. **Resize gambar ke 128×128**
    Seluruh citra diseragamkan ukurannya untuk menyesuaikan input model dan mengurangi beban komputasi.
 
-5. **Normalisasi pixel (0–1)**
+4. **Normalisasi pixel (0–1)**
    Nilai pixel dinormalisasi untuk mempercepat konvergensi model saat training.
 
-6. **Visualisasi sampel data**
+5. **Visualisasi sampel data**
    Beberapa contoh citra dari masing-masing kelas divisualisasikan untuk memastikan bahwa proses pelabelan telah berjalan dengan benar.
 
-7. **Data Augmentation (rotasi, shift, zoom, flip)**
+6. **Data Augmentation (rotasi, shift, zoom, flip)**
    Data augmentation diterapkan terutama pada kelas **Cataract** untuk:
 
    * Menambah jumlah data hingga memenuhi ketentuan minimal UAP (≥ 5.000 data)
    * Mengurangi ketidakseimbangan kelas (*class imbalance*)
    * Meningkatkan kemampuan generalisasi model dalam mendeteksi katarak
 
-8. **Penyimpanan hasil preprocessing (`.npy`)**
+7. **Penyimpanan hasil preprocessing (`.npy`)**
    Dataset hasil preprocessing disimpan dalam format `.npy` untuk mempercepat proses training.
 
 📌 **Augmentasi dilakukan untuk menambah jumlah data dan menyeimbangkan kelas**, sesuai ketentuan UAP.
