@@ -46,6 +46,7 @@ Klasifikasi-Mata-Katarak/
   * Dataset awal < 5.000
   * ✅ **Dilakukan data augmentation** untuk memenuhi ketentuan minimal UAP
 * **Sumber Dataset**:
+
   [https://www.kaggle.com/code/rishabnair/odir-5k]
 
 ### 📁 Struktur Dataset di Google Drive
@@ -72,13 +73,37 @@ data.xlsx          → metadata & label awal
 
 Tahapan preprocessing dilakukan pada file `preprocessing.ipynb`, meliputi:
 
-1. Load metadata dari `data.xlsx`
-2. Pelabelan otomatis (Normal / Cataract)
-3. Resize gambar ke **128×128**
-4. Normalisasi pixel (0–1)
-5. Visualisasi sampel data
-6. **Data Augmentation** (rotasi, shift, zoom, flip)
-7. Penyimpanan hasil preprocessing (`.npy`)
+1. **Load metadata dari `data.xlsx`**
+   Metadata digunakan untuk mengidentifikasi kondisi mata pada setiap citra fundus.
+
+2. **Pelabelan otomatis (Normal / Cataract)**
+   Proses pelabelan dilakukan secara otomatis berdasarkan metadata pada file `data.xlsx`.
+   Setelah proses pelabelan selesai, diperoleh distribusi dataset sebagai berikut:
+
+   * **Total images**: 3.411
+   * **Normal**: 3.098
+   * **Cataract**: 313
+
+   Hasil ini menunjukkan bahwa dataset awal **sangat tidak seimbang**, di mana jumlah citra kelas **Cataract jauh lebih sedikit** dibandingkan kelas **Normal**.
+
+3. **Resize gambar ke 128×128**
+   Seluruh citra diseragamkan ukurannya untuk menyesuaikan input model dan mengurangi beban komputasi.
+
+4. **Normalisasi pixel (0–1)**
+   Nilai pixel dinormalisasi untuk mempercepat konvergensi model saat training.
+
+5. **Visualisasi sampel data**
+   Beberapa contoh citra dari masing-masing kelas divisualisasikan untuk memastikan bahwa proses pelabelan telah berjalan dengan benar.
+
+6. **Data Augmentation (rotasi, shift, zoom, flip)**
+   Data augmentation diterapkan terutama pada kelas **Cataract** untuk:
+
+   * Menambah jumlah data hingga memenuhi ketentuan minimal UAP (≥ 5.000 data)
+   * Mengurangi ketidakseimbangan kelas (*class imbalance*)
+   * Meningkatkan kemampuan generalisasi model dalam mendeteksi katarak
+
+7. **Penyimpanan hasil preprocessing (`.npy`)**
+   Dataset hasil preprocessing disimpan dalam format `.npy` untuk mempercepat proses training.
 
 📌 **Augmentasi dilakukan untuk menambah jumlah data dan menyeimbangkan kelas**, sesuai ketentuan UAP.
 
