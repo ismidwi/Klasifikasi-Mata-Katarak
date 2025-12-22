@@ -149,13 +149,6 @@ Setiap model dievaluasi menggunakan:
 
 ## 🔍 Tabel Perbandingan Model
 
-Siap 👍 ini aku **rapikan & samakan formatnya** supaya **konsisten, rapi, dan siap dinilai UAP**.
-Kita lengkapi **CNN + MobileNetV2 + EfficientNetB0** berdasarkan **hasil asli kamu**.
-
----
-
-## 🔍 Tabel Perbandingan Model
-
 | Nama Model                             | Akurasi | Hasil Analisis                                                                                                                                                                                                                        |
 | -------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **CNN (Non-Pretrained)**               | **94%** | Model CNN dasar mampu mempelajari pola citra fundus dengan cukup baik. Akurasi tergolong tinggi, namun performa pada kelas **Cataract** masih terbatas (recall 0.47) akibat ketidakseimbangan data dan tidak adanya bobot pretrained. |
