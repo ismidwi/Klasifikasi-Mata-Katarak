@@ -24,10 +24,8 @@ Klasifikasi-Mata-Katarak/
 │
 ├── app.py
 ├── README.md
-├── notebooks/
-│   ├── preprocessing.ipynb
-│   ├── training_model.ipynb
-│
+├── preprocessing.ipynb
+├── training_model.ipynb
 └── (dataset & model besar disimpan di Google Drive)
 ```
 
